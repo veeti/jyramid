@@ -1,6 +1,5 @@
-package com.jyramid.test.controller;
+package com.jyramid.controller;
 
-import com.jyramid.controller.Resource;
 import com.jyramid.http.HttpMethod;
 import org.junit.Assert;
 import org.junit.Test;

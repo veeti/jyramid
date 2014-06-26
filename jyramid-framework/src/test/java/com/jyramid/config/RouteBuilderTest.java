@@ -1,6 +1,5 @@
-package com.jyramid.test.config;
+package com.jyramid.config;
 
-import com.jyramid.config.Route;
 import org.junit.Before;
 import org.junit.Test;
 

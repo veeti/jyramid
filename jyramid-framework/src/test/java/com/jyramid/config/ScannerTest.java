@@ -1,6 +1,5 @@
-package com.jyramid.test.config;
+package com.jyramid.config;
 
-import com.jyramid.config.Scanner;
 import com.jyramid.controller.Controller;
 import com.jyramid.controller.Resource;
 import com.jyramid.http.HttpRequest;

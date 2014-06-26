@@ -1,8 +1,5 @@
-package com.jyramid.test.config;
+package com.jyramid.config;
 
-import com.jyramid.config.Configurator;
-import com.jyramid.config.RouteConflictException;
-import com.jyramid.config.PendingRoutesException;
 import com.jyramid.controller.Controller;
 import com.jyramid.controller.Resource;
 import com.jyramid.http.HttpRequest;
