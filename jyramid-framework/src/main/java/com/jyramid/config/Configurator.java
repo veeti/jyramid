@@ -1,7 +1,11 @@
 package com.jyramid.config;
 
 import java.lang.reflect.Method;
-import java.util.*;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class Configurator {
 
