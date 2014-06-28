@@ -1,6 +1,7 @@
 package com.jyramid.config;
 
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 /**
  * A route in the application that matches a specific URL to a controller and method.
@@ -87,6 +88,8 @@ public class Route {
                 throw new IllegalStateException("Callable must not be null.");
             if (controller == null)
                 throw new IllegalStateException("Controller must not be null.");
+            if (!Arrays.asList(controller.getClass().getMethods()).contains(callable))
+                throw new IllegalStateException("Callable must belong to controller.");
 
             return new Route(name, route, controller, callable);
         }

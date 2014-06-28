@@ -1,5 +1,7 @@
 package com.jyramid.config;
 
+import com.jyramid.controller.Controller;
+import com.jyramid.controller.Resource;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -15,8 +17,8 @@ public final class RouteBuilderTest {
 
     @Before
     public void createBuilder() throws NoSuchMethodException {
-        fakeController = new Object();
-        fakeMethod = getClass().getMethod("createBuilder");
+        fakeController = new FakeController();
+        fakeMethod = fakeController.getClass().getMethod("test");
         builder = new Route.Builder()
                 .setName("test")
                 .setRoute("/")
@@ -64,6 +66,22 @@ public final class RouteBuilderTest {
     @Test(expected = IllegalStateException.class)
     public void builderBuildControllerNull() {
         builder.setController(null).build();
+    }
+
+    /**
+     * Callable must be from controller.
+     */
+    @Test(expected = IllegalStateException.class)
+    public void builderBuildControllerMustHaveCallable() {
+        builder.setController(new Object()).build();
+    }
+
+    @Controller
+    private static class FakeController {
+
+        @Resource(routeName = "")
+        public void test() { }
+
     }
 
 }
